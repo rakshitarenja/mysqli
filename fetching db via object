@@ -1,0 +1,10 @@
+<?php
+include('connect.php');
+$que=mysqli_query($con,"select * from info");
+//it has fastest Fetching because it generates Reference. Therefore, it supports only FIELD NAME.
+	while ($r=mysqli_fetch_object($que))
+	{
+	echo("$r->name")." email_id=";
+	echo("$r->id")."<br>";
+	}
+?>
