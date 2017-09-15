@@ -1,0 +1,10 @@
+<?php
+include('connect.php');
+$que=mysqli_query($con,"select * from info");
+//it supports only INDEXING from the Database.
+	while ($r=mysqli_fetch_row($que))
+	{
+	echo("$r[0]")." name:";
+	echo("$r[1]")."<br>";
+	}
+?>
