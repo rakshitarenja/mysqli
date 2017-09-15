@@ -1,0 +1,27 @@
+<html>
+<body>
+<form action="incdelete.php" method="get">
+<!- Enter name <input type="text" name="name">
+Enter ID <input type="text" name="id" /><br /><br />
+
+<input type="submit" name="delete" value="submit" />
+</form>
+</body>
+</html>
+
+<?php
+if(isset($_GET['submit']))
+	{
+	//$name=$_GET['name'];
+	$id=$_GET['id'];
+	include('connect.php');
+	
+	$que=mysqli_query($con,"delete from info where id='$id'");
+	//both $que are going to delete the query
+	//$que=mysqli_query($con,"delete from info where id='$id' and name='$name'");
+	if(!($que))
+		echo("record not deleted");
+	else
+		echo("record deleted successfully");
+	}
+?>
