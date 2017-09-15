@@ -1,0 +1,10 @@
+<?php
+include('connect.php');
+$que=mysqli_query($con,"select * from info");
+//it supports both of the things i.e. INDEXING and FIELD NAME.
+	while ($r=mysqli_fetch_array($que))
+	{
+	echo("$r[0]")." name:";
+	echo("$r[1]")."<br>";
+	}
+?>
