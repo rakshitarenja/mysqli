@@ -1,0 +1,10 @@
+<?php
+include('connect.php');
+$que=mysqli_query($con,"select * from info");
+//it supports only FIELD NAME from the Database.
+	while ($r=mysqli_fetch_assoc($que))
+	{
+	echo("$r[name]")." email_id=";
+	echo("$r[id]")."<br>";
+	}
+?>
